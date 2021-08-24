@@ -1,0 +1,1625 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.RCSBusinessMessaging.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.AgentContentMessage">
+            <summary>The content of a message sent from the agent to a user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentContentMessage.ContentInfo">
+            <summary>Information about a file, including the URL of the file and the URL of the file’s thumbnail. The
+            RBM platform serves content from a cache, but an agent can force the RBM platform to fetch a new version of
+            the content and refresh the cache.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentContentMessage.FileName">
+            <summary>The unique name of a file. The RBM platform returns a file name when an agent uploads a
+            file.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentContentMessage.RichCard">
+            <summary>A standalone rich card.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentContentMessage.Suggestions">
+            <summary>A list of suggested replies and suggested actions that appear as a list of suggestion chips
+            following the associated agent message. Maximum 11 suggestions. The chips only display when the associated
+            agent message is the most recent message within the conversation (including both agent and user messages).
+            The user can tap a suggested reply to send the text reply back to the agent or tap a suggested action to
+            initiate a native action on the device.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentContentMessage.Text">
+            <summary>Text encoded in UTF-8.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentContentMessage.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.AgentEvent">
+            <summary>An event from the agent to the user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentEvent.EventType">
+            <summary>The type of the agent event.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentEvent.MessageId">
+            <summary>The ID of the user message that the agent event pertains to. This field is only applicable for
+            agent events of type READ.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentEvent.Name">
+            <summary>This field is set by the RBM platform. Do not include it when creating an agent event. The field
+            resolves "phones/{E.164}/agentEvents/{eventId}", where {E.164} is the user's phone number in E.164 format
+            and {eventId} is the agent-assigned ID of the agent event.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentEvent.SendTime">
+            <summary>This field is set by the RBM platform. Do not include it when creating an agent message. The field
+            resolves the time when the event is sent to the user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentEvent.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.AgentMessage">
+            <summary>A message sent from the agent to a user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentMessage.ContentMessage">
+            <summary>The content of the agent message.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentMessage.Name">
+            <summary>This field is set by the RBM platform. Do not include it when creating an agent message. The field
+            resolves "phones/{E.164}/agentMessages/{messageId}", where {E.164} is the user's phone number in E.164
+            format and {messageId} is the agent-assigned ID of the agent message.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentMessage.SendTime">
+            <summary>This field is set by the RBM platform. Do not include it when creating an agent message. The field
+            resolves the time when the message is sent to the user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.AgentMessage.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersRequest">
+            <summary>Request to check if users are RBM-reachable.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersRequest.AgentId">
+            <summary>Optional. The agent's unique identifier. Defined by RCS Business Messaging.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersRequest.Users">
+            <summary>List of users' phone numbers in E.164 format.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersResponse">
+            <summary>Response with RBM-reachability user data.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersResponse.ReachableRandomSampleUserCount">
+            <summary>Count of phone numbers from the randomly selected list that are RCS-reachable across all carriers,
+            regardless of the agent's launch status. The ratio between this value and total_random_sample_user_count can
+            approximate the potential reach for a list of users.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersResponse.ReachableUsers">
+            <summary>List of users' phone numbers that RBM can reach. Only includes users on carriers that the agent is
+            launched on.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersResponse.TotalRandomSampleUserCount">
+            <summary>Count of phone numbers randomly selected from reachable_users. Typically, this value is ~75% of the
+            total requested phone numbers. This value is `0` if the count of requested phone numbers is less than
+            500.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.Capabilities">
+            <summary>List of supported features by the user</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Capabilities.Features">
+            <summary>List of RBM features that this device supports.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Capabilities.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.CardContent">
+            <summary>Card content</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CardContent.Description">
+            <summary>(Optional) Description of the card. Maximum 2000 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CardContent.Media">
+            <summary>(Optional) Media (image, GIF, video) to include in the card.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CardContent.Suggestions">
+            <summary>(Optional) List of suggestions to include in the card. Maximum 4 suggestions.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CardContent.Title">
+            <summary>(Optional) Title of the card. Maximum 200 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CardContent.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.CarouselCard">
+            <summary>Carousel of cards.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CarouselCard.CardContents">
+            <summary>The list of contents for each card in the carousel. A carousel can have a minimum of 2 cards and a
+            maximum 10 cards.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CarouselCard.CardWidth">
+            <summary>The width of the cards in the carousel.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CarouselCard.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.ContentInfo">
+            <summary>Message containing the content information.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ContentInfo.FileUrl">
+            <summary>Publicly reachable URL of the file. The RBM platform determines the MIME type of the file from the
+            content-type field in the HTTP headers when the platform fetches the file. The content-type field must be
+            present and accurate in the HTTP response from the URL. Recommended maximum file size of 100 MB.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ContentInfo.ForceRefresh">
+            <summary>If set, the RBM platform fetches the file and thumbnail from the specified URLs, even if the
+            platform has cached copies of the file (and/or of the thumbnail).</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ContentInfo.ThumbnailUrl">
+            <summary>(Optional, for image and video files only) Publicly reachable URL of the thumbnail. Maximum size of
+            100 kB. If you don't provide a thumbnail URL, the RBM platform displays a blank placeholder thumbnail until
+            the user's device downloads the file. Depending on the user's setting, the file may not download
+            automatically and may require the user to tap a download button.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ContentInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.CreateCalendarEventAction">
+            <summary>Opens the user's default calendar app and starts the new calendar event flow with the agent-specified
+            event data pre-filled.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateCalendarEventAction.Description">
+            <summary>Event description.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateCalendarEventAction.EndTime">
+            <summary>Event end time.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateCalendarEventAction.StartTime">
+            <summary>Event start time.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateCalendarEventAction.Title">
+            <summary>Event title.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateCalendarEventAction.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest">
+            <summary>Request for creating file.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest.Blob">
+            <summary>Blob file reference. This will be propagated by scotty agent automatically.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest.ContentDescription">
+            <summary>Optional. Text description of the file's content. Screen readers use this description to help users
+            with disabilities understand what the file contains.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest.FileUrl">
+            <summary>Optional. Publicly available URL of the file. The RBM platform determines the MIME type of the file
+            from the content-type field in the HTTP headers when fetching the file. Supported image content types:
+            image/jpeg, image/jpg, image/gif, image/png. Supported video content types: video/h263, video/m4v,
+            video/mp4, video/mpeg, video/mpeg4, video/webm.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest.MediaRequestInfo">
+            <summary>Media request info populated by Scotty server. This will be propagated by scotty agent
+            automatically.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest.ThumbnailUrl">
+            <summary>Optional. Publicly available URL of the thumbnail corresponding to the file. If this field is not
+            set, then the RBM platform automatically generates a thumbnail from the file. The RBM platform determines
+            the MIME type of the file from the content-type field in the HTTP headers when fetching the file. Supported
+            image content types: image/jpeg, image/jpg, image/gif, image/png.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.DialAction">
+            <summary>Opens the user's default dialer app with the agent-specified phone number filled in.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.DialAction.PhoneNumber">
+            <summary>The phone number in E.164 format, for example, +12223334444.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.DialAction.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.DialogflowEvent">
+            <summary>Dialogflow event triggered by the RBM Platform. With events, an agent can match an intent without using
+            language as an input. Parameters enable personalized responses. For example, with the input `{ "eventName":
+            "welcome_event", "parameters": { "name": "Sam" } }`, a Dialogflow agent can create the response `"Hello Sam!
+            What can I do for you today?"`.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.DialogflowEvent.EventName">
+            <summary>The unique identifier of the event. For example, `RBM_WELCOME_EVENT`.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.DialogflowEvent.LanguageCode">
+            <summary>The language of this query. For a list of language codes, see Language Support. Before a Dialogflow
+            agent can use a language, the language must be enabled in the Dialogflow console. Queries in the same
+            session can specify different languages. If a language isn't specified, Dialogflow uses the agent's default
+            language. do not necessarily need to specify the same language.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.DialogflowEvent.Name">
+            <summary>This field is set by the RBM platform. Don't include it when creating an agent message. The field
+            resolves "phones/{E.164}/dialogflowMessages/{messageId}", where {E.164} is the user's phone number in E.164
+            format and {messageId} is the agent-assigned ID of the RBM agent message.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.DialogflowEvent.Parameters">
+            <summary>(Optional) Parameters associated with the event.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.DialogflowEvent.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.Empty">
+            <summary>A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A
+            typical example is to use it as the request or the response type of an API method. For instance: service Foo {
+            rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty
+            JSON object `{}`.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Empty.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.File">
+            <summary>A file resource with a unique name that an agent can use to identify the file when sending
+            messages.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.File.Name">
+            <summary>Server-assigned unique name of the file resource, which an agent can use to identify the file when
+            sending messages. The format is "files/{uid}", where {uid} is a unique ID.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.File.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataBlobstore2Info">
+            <summary>Information to read/write to blobstore2.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataBlobstore2Info.BlobGeneration">
+            <summary>The blob generation id.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataBlobstore2Info.BlobId">
+            <summary>The blob id, e.g., /blobstore/prod/playground/scotty</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataBlobstore2Info.DownloadReadHandle">
+            <summary>Read handle passed from Bigstore -> Scotty for a GCS download. This is a signed, serialized
+            blobstore2.ReadHandle proto which must never be set outside of Bigstore, and is not applicable to non-GCS
+            media downloads.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataBlobstore2Info.ReadToken">
+            <summary>The blob read token. Needed to read blobs that have not been replicated. Might not be available
+            until the final call.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataBlobstore2Info.UploadMetadataContainer">
+            <summary>Metadata passed from Blobstore -> Scotty for a new GCS upload. This is a signed, serialized
+            blobstore2.BlobMetadataContainer proto which must never be consumed outside of Bigstore, and is not
+            applicable to non-GCS media uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataBlobstore2Info.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia">
+            <summary>A sequence of media data references representing composite data. Introduced to support Bigstore
+            composite objects. For details, visit http://go/bigstore-composites.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.BlobRef">
+            <summary>Blobstore v1 reference, set if reference_type is BLOBSTORE_REF This should be the byte
+            representation of a blobstore.BlobRef. Since Blobstore is deprecating v1, use blobstore2_info instead. For
+            now, any v2 blob will also be represented in this field as v1 BlobRef.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.Blobstore2Info">
+            <summary>Blobstore v2 info, set if reference_type is BLOBSTORE_REF and it refers to a v2 blob.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.CosmoBinaryReference">
+            <summary>A binary data reference for a media download. Serves as a technology-agnostic binary reference in
+            some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as
+            bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support
+            JavaScript. This prevents us from including the actual type of this field.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.Crc32cHash">
+            <summary>crc32.c hash for the payload.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.Inline">
+            <summary>Media data, set if reference_type is INLINE</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.Length">
+            <summary>Size of the data, in bytes</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.Md5Hash">
+            <summary>MD5 hash for the payload.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.ObjectId">
+            <summary>Reference to a TI Blob, set if reference_type is BIGSTORE_REF.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.Path">
+            <summary>Path to the data, set if reference_type is PATH</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.ReferenceType">
+            <summary>Describes what the field reference contains.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.Sha1Hash">
+            <summary>SHA-1 hash for the payload.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataCompositeMedia.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataContentTypeInfo">
+            <summary>Detailed Content-Type information from Scotty. The Content-Type of the media will typically be filled
+            in by the header or Scotty's best_guess, but this extended information provides the backend with more
+            information so that it can make a better decision if needed. This is only used on media upload requests from
+            Scotty.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataContentTypeInfo.BestGuess">
+            <summary>Scotty's best guess of what the content type of the file is.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataContentTypeInfo.FromBytes">
+            <summary>The content type of the file derived by looking at specific bytes (i.e. "magic bytes") of the
+            actual file.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataContentTypeInfo.FromFileName">
+            <summary>The content type of the file derived from the file extension of the original file name used by the
+            client.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataContentTypeInfo.FromHeader">
+            <summary>The content type of the file as specified in the request headers, multipart headers, or RUPIO start
+            request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataContentTypeInfo.FromUrlPath">
+            <summary>The content type of the file derived from the file extension of the URL path. The URL path is
+            assumed to represent a file name (which is typically only true for agents that are providing a REST
+            API).</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataContentTypeInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffChecksumsResponse">
+            <summary>Backend response for a Diff get checksums response. For details on the Scotty Diff protocol, visit
+            http://go/scotty-diff-protocol.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffChecksumsResponse.ChecksumsLocation">
+            <summary>Exactly one of these fields must be populated. If checksums_location is filled, the server will
+            return the corresponding contents to the user. If object_location is filled, the server will calculate the
+            checksums based on the content there and return that to the user. For details on the format of the
+            checksums, see http://go/scotty-diff-protocol.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffChecksumsResponse.ChunkSizeBytes">
+            <summary>The chunk size of checksums. Must be a multiple of 256KB.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffChecksumsResponse.ObjectLocation">
+            <summary>If set, calculate the checksums based on the contents and return them to the caller.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffChecksumsResponse.ObjectSizeBytes">
+            <summary>The total size of the server object.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffChecksumsResponse.ObjectVersion">
+            <summary>The object version of the object the checksums are being returned for.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffChecksumsResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffDownloadResponse">
+            <summary>Backend response for a Diff download response. For details on the Scotty Diff protocol, visit
+            http://go/scotty-diff-protocol.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffDownloadResponse.ObjectLocation">
+            <summary>The original object location.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffDownloadResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadRequest">
+            <summary>A Diff upload request. For details on the Scotty Diff protocol, visit http://go/scotty-diff-
+            protocol.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadRequest.ChecksumsInfo">
+            <summary>The location of the checksums for the new object. Agents must clone the object located here, as the
+            upload server will delete the contents once a response is received. For details on the format of the
+            checksums, see http://go/scotty-diff-protocol.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadRequest.ObjectInfo">
+            <summary>The location of the new object. Agents must clone the object located here, as the upload server
+            will delete the contents once a response is received.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadRequest.ObjectVersion">
+            <summary>The object version of the object that is the base version the incoming diff script will be applied
+            to. This field will always be filled in.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadResponse">
+            <summary>Backend response for a Diff upload request. For details on the Scotty Diff protocol, visit
+            http://go/scotty-diff-protocol.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadResponse.ObjectVersion">
+            <summary>The object version of the object at the server. Must be included in the end notification response.
+            The version in the end notification response must correspond to the new version of the object that is now
+            stored at the server, after the upload.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadResponse.OriginalObject">
+            <summary>The location of the original file for a diff upload request. Must be filled in if responding to an
+            upload start notification.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffUploadResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffVersionResponse">
+            <summary>Backend response for a Diff get version response. For details on the Scotty Diff protocol, visit
+            http://go/scotty-diff-protocol.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffVersionResponse.ObjectSizeBytes">
+            <summary>The total size of the server object.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffVersionResponse.ObjectVersion">
+            <summary>The version of the object stored at the server.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDiffVersionResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDownloadParameters">
+            <summary>Parameters specific to media downloads.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDownloadParameters.AllowGzipCompression">
+            <summary>A boolean to be returned in the response to Scotty. Allows/disallows gzip encoding of the payload
+            content when the server thinks it's advantageous (hence, does not guarantee compression) which allows Scotty
+            to GZip the response to the client.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDownloadParameters.IgnoreRange">
+            <summary>Determining whether or not Apiary should skip the inclusion of any Content-Range header on its
+            response to Scotty.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataDownloadParameters.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia">
+            <summary>A reference to data stored on the filesystem, on GFS or in blobstore.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Algorithm">
+            <summary>Deprecated, use one of explicit hash type fields instead. Algorithm used for calculating the hash.
+            As of 2011/01/21, "MD5" is the only possible value for this field. New values may be added at any
+            time.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.BigstoreObjectRef">
+            <summary>Use object_id instead.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.BlobRef">
+            <summary>Blobstore v1 reference, set if reference_type is BLOBSTORE_REF This should be the byte
+            representation of a blobstore.BlobRef. Since Blobstore is deprecating v1, use blobstore2_info instead. For
+            now, any v2 blob will also be represented in this field as v1 BlobRef.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Blobstore2Info">
+            <summary>Blobstore v2 info, set if reference_type is BLOBSTORE_REF and it refers to a v2 blob.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.CompositeMedia">
+            <summary>A composite media composed of one or more media objects, set if reference_type is COMPOSITE_MEDIA.
+            The media length field must be set to the sum of the lengths of all composite media objects. Note: All
+            composite media must have length specified.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.ContentType">
+            <summary>MIME type of the data</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.ContentTypeInfo">
+            <summary>Extended content type information provided for Scotty uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.CosmoBinaryReference">
+            <summary>A binary data reference for a media download. Serves as a technology-agnostic binary reference in
+            some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as
+            bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support
+            JavaScript. This prevents us from including the actual type of this field.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Crc32cHash">
+            <summary>For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE
+            WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being
+            downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently
+            supported.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.DiffChecksumsResponse">
+            <summary>Set if reference_type is DIFF_CHECKSUMS_RESPONSE.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.DiffDownloadResponse">
+            <summary>Set if reference_type is DIFF_DOWNLOAD_RESPONSE.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.DiffUploadRequest">
+            <summary>Set if reference_type is DIFF_UPLOAD_REQUEST.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.DiffUploadResponse">
+            <summary>Set if reference_type is DIFF_UPLOAD_RESPONSE.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.DiffVersionResponse">
+            <summary>Set if reference_type is DIFF_VERSION_RESPONSE.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.DownloadParameters">
+            <summary>Parameters for a media download.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Filename">
+            <summary>Original file name</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Hash" -->
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.HashVerified">
+            <summary>For Scotty uploads only. If a user sends a hash code and the backend has requested that Scotty
+            verify the upload against the client hash, Scotty will perform the check on behalf of the backend and will
+            reject it if the hashes don't match. This is set to true if Scotty performed this verification.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Inline">
+            <summary>Media data, set if reference_type is INLINE</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.IsPotentialRetry">
+            <summary>|is_potential_retry| is set false only when Scotty is certain that it has not sent the request
+            before. When a client resumes an upload, this field must be set true in agent calls, because Scotty cannot
+            be certain that it has never sent the request before due to potential failure in the session state
+            persistence.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Length">
+            <summary>Size of the data, in bytes</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Md5Hash">
+            <summary>Scotty-provided MD5 hash for an upload.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.MediaId">
+            <summary>Media id to forward to the operation GetMedia. Can be set if reference_type is GET_MEDIA.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.ObjectId">
+            <summary>Reference to a TI Blob, set if reference_type is BIGSTORE_REF.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Path">
+            <summary>Path to the data, set if reference_type is PATH</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.ReferenceType">
+            <summary>Describes what the field reference contains.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Sha1Hash">
+            <summary>Scotty-provided SHA1 hash for an upload.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Sha256Hash">
+            <summary>Scotty-provided SHA256 hash for an upload.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Timestamp">
+            <summary>Time at which the media data was last updated, in milliseconds since UNIX epoch</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.Token">
+            <summary>A unique fingerprint/version id for the media data</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataMedia.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.GdataObjectId">
+            <summary>This is a copy of the tech.blob.ObjectId proto, which could not be used directly here due to transitive
+            closure issues with JavaScript support; see http://b/8801763.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataObjectId.BucketName">
+            <summary>The name of the bucket to which this object belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataObjectId.Generation">
+            <summary>Generation of the object. Generations are monotonically increasing across writes, allowing them to
+            be be compared to determine which generation is newer. If this is omitted in a request, then you are
+            requesting the live object. See http://go/bigstore-versions</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataObjectId.ObjectName">
+            <summary>The name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.GdataObjectId.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.LatLng">
+            <summary>An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to
+            represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the
+            WGS84 standard. Values must be within normalized ranges.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.LatLng.Latitude">
+            <summary>The latitude in degrees. It must be in the range [-90.0, +90.0].</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.LatLng.Longitude">
+            <summary>The longitude in degrees. It must be in the range [-180.0, +180.0].</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.LatLng.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.LineItem">
+            <summary>A line item in a payment request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.LineItem.Amount">
+            <summary>The amount of the line item. SECONDARY line items may have a negative amount.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.LineItem.Label">
+            <summary>The text for a line item. For example, "Total due".</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.LineItem.SubText">
+            <summary>(Optional) Text that is displayed in a smaller font below the line item label.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.LineItem.Type">
+            <summary>The line item type.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.LineItem.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.Media">
+            <summary>A media file within a rich card.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Media.ContentInfo">
+            <summary>Information about a file, including the URL of the file and the URL of the file’s thumbnail. The
+            RBM platform serves content from a cache, but an agent can force the RBM platform to fetch a new version of
+            the content and refresh the cache.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Media.FileName">
+            <summary>The unique name of the file, returned by the RBM platform when the file was uploaded.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Media.Height">
+            <summary>The height of the media within a rich card with a vertical layout. For a standalone card with
+            horizontal layout, height is not customizable, and this field is ignored.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Media.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo">
+            <summary>Extra information added to operations that support Scotty media requests.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo.CurrentBytes">
+            <summary>The number of current bytes uploaded or downloaded.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo.CustomData">
+            <summary>Data to be copied to backend requests. Custom data is returned to Scotty in the agent_state field,
+            which Scotty will then provide in subsequent upload notifications.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo.DiffObjectVersion">
+            <summary>Set if the http request info is diff encoded. The value of this field is the version number of the
+            base revision. This is corresponding to Apiary's mediaDiffObjectVersion
+            (//depot/google3/java/com/google/api/server/media/variable/DiffObjectVersionVariable.java). See go/esf-
+            scotty-diff-upload for more information.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo.NotificationType">
+            <summary>The type of notification received from Scotty.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo.RequestId">
+            <summary>The Scotty request ID.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo.TotalBytes">
+            <summary>The total size of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo.TotalBytesIsEstimated">
+            <summary>Whether the total bytes field contains an estimated data.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.MediaRequestInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.Method">
+            <summary>Supported payment methods.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.AllowedCountryCodes">
+            <summary>The countries that the payment request is valid in, as ISO-2 country codes. For example, `["US",
+            "MX"]`.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.BillingAddressFormat">
+            <summary>The billing address format.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.BillingAddressRequired">
+            <summary>Whether or not the user must provide a billing address.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.MerchantId">
+            <summary>The merchant ID for the supported payment method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.MerchantName">
+            <summary>The merchant name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.PaymentMethod">
+            <summary>The payment method name. You must set this field to `"https://paywith.google.com/pay"`.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.SupportedCardNetworks">
+            <summary>The supported card networks. For example, `["MASTERCARD", "VISA", "DISCOVER"]`.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.SupportedCardTypes">
+            <summary>The supported card types. For example, `["CARD", "TOKENIZED_CARD"]`.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.TokenizationData">
+            <summary>Tokenization information for the payment request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Method.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.Money">
+            <summary>Represents an amount of money with its currency type.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Money.CurrencyCode">
+            <summary>The three-letter currency code defined in ISO 4217.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Money.Nanos">
+            <summary>Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999
+            inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be
+            positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is
+            represented as `units`=-1 and `nanos`=-750,000,000.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Money.Units">
+            <summary>The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US
+            dollar.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Money.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.OpenUrlAction">
+            <summary>Opens the user's default web browser app to the specified URL. If the user has an app installed that is
+            registered as the default handler for the URL, then this app will be opened instead, and its icon will be used
+            in the suggested action UI.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.OpenUrlAction.Url">
+            <summary>URL</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.OpenUrlAction.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction">
+            <summary>Payment request action.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.CompletedMessage">
+            <summary>Text that replaces the payment request text when the transaction is complete.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.ExpireTime">
+            <summary>(Optional) A timestamp of when the payment request expires. If a payment request expires, the
+            request becomes invalid. If you specify a timestamp, the RCS-enabled messaging app doesn't verify an
+            expiration time with the RBM agent. If you don't specify a timestamp, the payment request only expires if
+            the agent flags the request as expired via the experation check webhook.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.ExpiredMessage">
+            <summary>Text that replaces the payment request text when the request is expired.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.Items">
+            <summary>Payment request line items, including regular items, taxes, sub-total, and shipping.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.PaymentMethods">
+            <summary>Supported payment methods.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.RequestId">
+            <summary>The agent-assigned ID of the payment request. This may be a UUID, as defined in
+            https://tools.ietf.org/html/rfc4122.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.Signature">
+            <summary>This field is set by the RBM platform. Do not include it when creating a payment request. The field
+            resolves to a checksum the RBM platform uses to validate the payment request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.Total">
+            <summary>The total amount of the payment request. The value must be positive.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.PaymentRequestAction.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.RequestCapabilityCallbackRequest">
+            <summary>Request message for RBMService.RequestCapabilityCallback method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.RequestCapabilityCallbackRequest.RequestId">
+            <summary>The ID of the request, assigned by the agent. This must be a UUID, as defined in
+            https://tools.ietf.org/html/rfc4122. This request ID is included in the capability callback, which returns
+            asynchronously.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.RequestCapabilityCallbackRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.RichCard">
+            <summary>A standalone rich card or a carousel of rich cards sent from the agent to the user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.RichCard.CarouselCard">
+            <summary>Carousel of cards.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.RichCard.StandaloneCard">
+            <summary>Standalone card.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.RichCard.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.ShareLocationAction">
+            <summary>Opens the RCS app's location chooser so the user can pick a location to send back to the
+            agent.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ShareLocationAction.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.StandaloneCard">
+            <summary>Standalone card</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.StandaloneCard.CardContent">
+            <summary>Card content.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.StandaloneCard.CardOrientation">
+            <summary>Orientation of the card.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.StandaloneCard.ThumbnailImageAlignment">
+            <summary>Image preview alignment for standalone cards with horizontal layout.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.StandaloneCard.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction">
+            <summary>When tapped, initiates the corresponding native action on the device.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.CreateCalendarEventAction">
+            <summary>Opens the user's default calendar app and starts the new calendar event flow with the agent-
+            specified event data pre-filled.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.DialAction">
+            <summary>Opens the user's default dialer app with the agent-specified phone number filled in.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.FallbackUrl">
+            <summary>(Optional) Fallback URL to use if a client doesn't support a suggested action. Fallback URLs open
+            in new browser windows.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.OpenUrlAction">
+            <summary>Opens the user's default web browser app to the given URL. If the user has an app installed that is
+            registered as the default handler for the URL, then this app will be opened instead, and its icon will be
+            used in the suggested action UI.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.PaymentRequestAction">
+            <summary>Sends a payment request from the agent to the user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.PostbackData">
+            <summary>Payload (base64 encoded) that will be sent to the agent in the user event that results when the
+            user taps the suggested action</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.ShareLocationAction">
+            <summary>Opens the RCS app's location chooser so the user can pick a location to send to the
+            agent.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.Text">
+            <summary>Text that is shown in the suggested action. Maximum 25 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.ViewLocationAction">
+            <summary>Opens the user's default map app and selects the agent-specified location or searches around the
+            user's location given an agent-specified query.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedAction.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedReply">
+            <summary>When tapped, sends the text reply back to the agent.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedReply.PostbackData">
+            <summary>The base64-encoded payload that the agent receives in a user event when the user taps the suggested
+            reply.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedReply.Text">
+            <summary>Text that is shown in the suggested reply and sent back to the agent when the user taps it. Maximum
+            25 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.SuggestedReply.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.Suggestion">
+            <summary>A suggested reply or a suggested action included within a rich card or within a suggestion chip
+            list.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Suggestion.Action">
+            <summary>Users can tap a suggested action to initiate the corresponding native action on the
+            device.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Suggestion.Reply">
+            <summary>Users can tap a suggested reply to send the text reply back to the agent.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Suggestion.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.Tester">
+            <summary>A tester for the agent. The agent can interact with verified testers even if the agent has not yet
+            launched.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Tester.InviteStatus">
+            <summary>The status of the invitation.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Tester.Name">
+            <summary>This field is set by the RBM platform. Do not include it when creating a tester object. The field
+            resolves "phones/{E.164}/testers", where {E.164} is the tester's phone number in E.164 format.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.Tester.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.TokenizationData">
+            <summary>Tokenization information for the payment request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.TokenizationData.Parameters">
+            <summary>Tokenization parameters, such as the public key.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.TokenizationData.TokenizationType">
+            <summary>The tokenization type for the payment processing provider.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.TokenizationData.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.Data.ViewLocationAction">
+            <summary>Opens the user's default map app and selects the agent-specified location or searches around the user's
+            location given an agent-specified query.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ViewLocationAction.Label">
+            <summary>(Optional) The label of the pin dropped at lat_long.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ViewLocationAction.LatLong">
+            <summary>(Optional) The latitude and longitude of the specified location.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ViewLocationAction.Query">
+            <summary>(Optional, only supported on Android Messages clients) Rather than specify a lat_long (and
+            optionally, a label), the agent can instead specify a query string. For default map apps that support search
+            functionality (including Google Maps), tapping this suggested action results in a location search centered
+            around the user's current location. If the query is sufficiently specific, then agents can use it to select
+            any location in the world. For instance, setting the query string to "Growing Tree Bank" will show all
+            Growing Tree Bank locations in the user's vicinity. Setting the query string to "1600 Amphitheater Parkway,
+            Mountain View, CA 94043" will select that specific address, regardless of the user's location.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.Data.ViewLocationAction.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService">
+            <summary>The RCSBusinessMessaging Service.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.Files">
+            <summary>Gets the Files resource.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.Phones">
+            <summary>Gets the Phones resource.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingService.Users">
+            <summary>Gets the Users resource.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1">
+            <summary>A base abstract class for RCSBusinessMessaging requests.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new RCSBusinessMessagingBaseServiceRequest instance.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.Xgafv">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.XgafvEnum">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.XgafvEnum.Value1">
+            <summary>v1 error format</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.XgafvEnum.Value2">
+            <summary>v2 error format</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.AccessToken">
+            <summary>OAuth access token.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.Alt">
+            <summary>Data format for response.</summary>
+            [default: json]
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.AltEnum">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.AltEnum.Media">
+            <summary>Media download with context-dependent Content-Type</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.AltEnum.Proto">
+            <summary>Responses with Content-Type of application/x-protobuf</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.Callback">
+            <summary>JSONP</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.Key">
+            <summary>API key. Your API key identifies your project and provides you with API access, quota, and reports.
+            Required unless you provide an OAuth 2.0 token.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+            assigned to a user, but should not exceed 40 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.UploadType">
+            <summary>Legacy upload protocol for media (e.g. "media", "multipart").</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.UploadProtocol">
+            <summary>Upload protocol for media (e.g. "raw", "multipart").</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.RCSBusinessMessagingBaseServiceRequest`1.InitParameters">
+            <summary>Initializes RCSBusinessMessaging parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.FilesResource">
+            <summary>The "files" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.FilesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.FilesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.FilesResource.Create(Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest)">
+            <summary>Uploads a file for use in media or rich card messages. The agent provides the URL or binary of the
+            file and (optionally) the URL of the corresponding thumbnail file. The RBM platform caches the file for 60
+            days and returns a unique name that you can use to identify the file when sending agent messages. To upload
+            a file binary, make an HTTP POST request to the Upload URI, omit the `fileUrl` field from the JSON request
+            body, and specify the binary as the POST request body. For example, use the `--upload-file` cURL flag with
+            the fully qualified file path of the binary file.</summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateRequest">
+            <summary>Uploads a file for use in media or rich card messages. The agent provides the URL or binary of the
+            file and (optionally) the URL of the corresponding thumbnail file. The RBM platform caches the file for 60
+            days and returns a unique name that you can use to identify the file when sending agent messages. To upload
+            a file binary, make an HTTP POST request to the Upload URI, omit the `fileUrl` field from the JSON request
+            body, and specify the binary as the POST request body. For example, use the `--upload-file` cURL flag with
+            the fully qualified file path of the binary file.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.FilesResource.Create(Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest,System.IO.Stream,System.String)">
+            <summary>Uploads a file for use in media or rich card messages. The agent provides the URL or binary of the
+            file and (optionally) the URL of the corresponding thumbnail file. The RBM platform caches the file for 60
+            days and returns a unique name that you can use to identify the file when sending agent messages. To upload
+            a file binary, make an HTTP POST request to the Upload URI, omit the `fileUrl` field from the JSON request
+            body, and specify the binary as the POST request body. For example, use the `--upload-file` cURL flag with
+            the fully qualified file path of the binary file.</summary>/// <param name="body">The body of the request.</param>
+            <param name="stream">The stream to upload.</param>
+            <param name="contentType">The content type of the stream to upload.</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload">
+            <summary>Create media upload which supports resumable upload.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.Xgafv">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.XgafvEnum">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.XgafvEnum.Value1">
+            <summary>v1 error format</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.XgafvEnum.Value2">
+            <summary>v2 error format</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.AccessToken">
+            <summary>OAuth access token.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.Alt">
+            <summary>Data format for response.</summary>
+            [default: json]
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.AltEnum">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.AltEnum.Media">
+            <summary>Media download with context-dependent Content-Type</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.AltEnum.Proto">
+            <summary>Responses with Content-Type of application/x-protobuf</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.Callback">
+            <summary>JSONP</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.Key">
+            <summary>API key. Your API key identifies your project and provides you with API access, quota, and
+            reports. Required unless you provide an OAuth 2.0 token.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+            assigned to a user, but should not exceed 40 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.UploadType">
+            <summary>Legacy upload protocol for media (e.g. "media", "multipart").</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.UploadProtocol">
+            <summary>Upload protocol for media (e.g. "raw", "multipart").</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.FilesResource.CreateMediaUpload.#ctor(Google.Apis.Services.IClientService,Google.Apis.RCSBusinessMessaging.v1.Data.CreateFileRequest,System.IO.Stream,System.String)">
+            <summary>Constructs a new Create media upload instance.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource">
+            <summary>The "phones" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEvents">
+            <summary>Gets the AgentEvents resource.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource">
+            <summary>The "agentEvents" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.Create(Google.Apis.RCSBusinessMessaging.v1.Data.AgentEvent,System.String)">
+            <summary>Sends an event from the agent to a user. Agent events can be used to indicate that the agent
+            has read a message from the user or that the agent is in the process of typing (which adds a human
+            element to the RBM experience). If RBM can't reach the user, the RBM platform returns `404 NOT_FOUND`.
+            Unlike agent messages, agent events cannot be revoked after sending.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="parent">"phones/{E.164}", where {E.164} is the user's phone number in E.164 format. For example, for a
+            user with the US phone number +1-222-333-4444, the value would be phones/+12223334444, and the resulting endpoint
+            would be https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/agentEvents.</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest">
+            <summary>Sends an event from the agent to a user. Agent events can be used to indicate that the agent
+            has read a message from the user or that the agent is in the process of typing (which adds a human
+            element to the RBM experience). If RBM can't reach the user, the RBM platform returns `404 NOT_FOUND`.
+            Unlike agent messages, agent events cannot be revoked after sending.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.RCSBusinessMessaging.v1.Data.AgentEvent,System.String)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.Parent">
+            <summary>"phones/{E.164}", where {E.164} is the user's phone number in E.164 format. For example,
+            for a user with the US phone number +1-222-333-4444, the value would be phones/+12223334444, and the
+            resulting endpoint would be
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/agentEvents.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.EventId">
+            <summary>The ID of the event, assigned by the agent. This must be a UUID, as defined in
+            https://tools.ietf.org/html/rfc4122. The RBM platform ignores any agent message sent with an ID that
+            was used by an earlier message or event sent from the same agent.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.AgentId">
+            <summary>Optional. The agent's unique identifier. Defined by RCS Business Messaging.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentEventsResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessages">
+            <summary>Gets the AgentMessages resource.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource">
+            <summary>The "agentMessages" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.Create(Google.Apis.RCSBusinessMessaging.v1.Data.AgentMessage,System.String)">
+            <summary>Sends a message from the agent to a user. The user must be RCS enabled and reachable by the RBM
+            platform in order for the agent to successfully send a message. When the message has been successfully
+            sent, the call returns with no error. Otherwise, the agent receives an error code. If the user is
+            online, the RBM platform delivers the message right away. Otherwise, the RBM platform queues the message
+            and delivered it when the user is next online. The RBM platform ignores any agent message sent with an
+            ID that was used by an earlier message or event sent from the same agent. Agent messages can be revoked
+            between the time that they are sent and the time that they are delivered.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="parent">"phones/{E.164}", where {E.164} is the user's phone number in E.164 format. For example, with
+            the US phone number +1-222-333-4444, the value would be phones/+12223334444, and the resulting endpoint would be
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/agentMessages.</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest">
+            <summary>Sends a message from the agent to a user. The user must be RCS enabled and reachable by the RBM
+            platform in order for the agent to successfully send a message. When the message has been successfully
+            sent, the call returns with no error. Otherwise, the agent receives an error code. If the user is
+            online, the RBM platform delivers the message right away. Otherwise, the RBM platform queues the message
+            and delivered it when the user is next online. The RBM platform ignores any agent message sent with an
+            ID that was used by an earlier message or event sent from the same agent. Agent messages can be revoked
+            between the time that they are sent and the time that they are delivered.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.RCSBusinessMessaging.v1.Data.AgentMessage,System.String)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.Parent">
+            <summary>"phones/{E.164}", where {E.164} is the user's phone number in E.164 format. For example,
+            with the US phone number +1-222-333-4444, the value would be phones/+12223334444, and the resulting
+            endpoint would be
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/agentMessages.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.MessageId">
+            <summary>The unique ID of the message, assigned by the agent. This must be a UUID, as defined in
+            https://tools.ietf.org/html/rfc4122. The RBM platform ignores any agent message sent with an ID that
+            was used by an earlier message or event sent from the same agent.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.AgentId">
+            <summary>Optional. The agent's unique identifier. Defined by RCS Business Messaging.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.Delete(System.String)">
+            <summary>Revokes an agent message that has been sent but not yet delivered. If the RBM platform
+            successfully revokes a message, then the message is deleted from the user’s message queue and is never
+            delivered. This method immediately returns 200 OK, whether or not the message was successfully revoked.
+            There is a small chance that the agent may initiate a revocation while the RBM platform is in the
+            process of delivering the message. In these rare cases, the agent receives a DELIVERED user event for
+            the message shortly after initiating the revocation request.</summary>
+            <param name="name">"phones/{E.164}/agentMessages/{messageId}", where {E.164} is the user's phone number in E.164
+            format and {messageId} is the agent-assigned ID of the agent message that should be revoked. For example, with the
+            US phone number +1-222-333-4444 and an agent message with the ID "12345xyz", the resulting endpoint would be
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/agentMessages/12345xyz.</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.DeleteRequest">
+            <summary>Revokes an agent message that has been sent but not yet delivered. If the RBM platform
+            successfully revokes a message, then the message is deleted from the user’s message queue and is never
+            delivered. This method immediately returns 200 OK, whether or not the message was successfully revoked.
+            There is a small chance that the agent may initiate a revocation while the RBM platform is in the
+            process of delivering the message. In these rare cases, the agent receives a DELIVERED user event for
+            the message shortly after initiating the revocation request.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.DeleteRequest.Name">
+            <summary>"phones/{E.164}/agentMessages/{messageId}", where {E.164} is the user's phone number in
+            E.164 format and {messageId} is the agent-assigned ID of the agent message that should be revoked.
+            For example, with the US phone number +1-222-333-4444 and an agent message with the ID "12345xyz",
+            the resulting endpoint would be
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/agentMessages/12345xyz.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.DeleteRequest.AgentId">
+            <summary>Optional. The agent's unique identifier. Defined by RCS Business Messaging.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.AgentMessagesResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.Capability">
+            <summary>Gets the Capability resource.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource">
+            <summary>The "capability" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallback(Google.Apis.RCSBusinessMessaging.v1.Data.RequestCapabilityCallbackRequest,System.String)">
+            <summary>Requests a callback containing the capabilities of a user. Following this request, the agent
+            receives an asynchronous callback with the user's capabilities.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="name">"phones/{E.164}/capability", where {E.164} is the user's phone number in E.164 format. For
+            example, with the US phone number +1-222-333-4444, the resulting endpoint would be
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/capability:requestCapabilityCallback</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest">
+            <summary>Requests a callback containing the capabilities of a user. Following this request, the agent
+            receives an asynchronous callback with the user's capabilities.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.RCSBusinessMessaging.v1.Data.RequestCapabilityCallbackRequest,System.String)">
+            <summary>Constructs a new RequestCapabilityCallback request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest.Name">
+            <summary>"phones/{E.164}/capability", where {E.164} is the user's phone number in E.164 format. For
+            example, with the US phone number +1-222-333-4444, the resulting endpoint would be https://rcsbusine
+            ssmessaging.googleapis.com/v1/phones/+12223334444/capability:requestCapabilityCallback</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.CapabilityResource.RequestCapabilityCallbackRequest.InitParameters">
+            <summary>Initializes RequestCapabilityCallback parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessages">
+            <summary>Gets the DialogflowMessages resource.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource">
+            <summary>The "dialogflowMessages" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.Create(Google.Apis.RCSBusinessMessaging.v1.Data.DialogflowEvent,System.String)">
+            <summary>Prompts a Dialogflow agent to send messages through an RBM agent. If Dialogflow integration
+            isn't enabled for an RBM agent, this method returns `403 PERMISSION_DENIED`. When an RBM agent is
+            integrated with a Dialogflow agent, this method triggers an event in the Dialogflow agent. The RBM
+            Platform routes responses from Dialogflow to the user's device and routes messages from the user back to
+            the Dialogflow agent. If a Dialogflow intent defines multiple responses, the RBM Platform sends users
+            one message per defined response. If you contact a webhook with Dialogflow fulfillment, the fulfillment
+            request includes the following information in the payload: Field Description rbm_user_phone_number The
+            user's phone number. rbm_share_location_response The user's location, if they tapped the share location
+            suggested action. </summary>
+            <param name="body">The body of the request.</param>
+            <param name="parent">"phones/{E.164}", where {E.164} is the user's phone number</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest">
+            <summary>Prompts a Dialogflow agent to send messages through an RBM agent. If Dialogflow integration
+            isn't enabled for an RBM agent, this method returns `403 PERMISSION_DENIED`. When an RBM agent is
+            integrated with a Dialogflow agent, this method triggers an event in the Dialogflow agent. The RBM
+            Platform routes responses from Dialogflow to the user's device and routes messages from the user back to
+            the Dialogflow agent. If a Dialogflow intent defines multiple responses, the RBM Platform sends users
+            one message per defined response. If you contact a webhook with Dialogflow fulfillment, the fulfillment
+            request includes the following information in the payload: Field Description rbm_user_phone_number The
+            user's phone number. rbm_share_location_response The user's location, if they tapped the share location
+            suggested action. </summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.RCSBusinessMessaging.v1.Data.DialogflowEvent,System.String)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.Parent">
+            <summary>"phones/{E.164}", where {E.164} is the user's phone number</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.MessageIdPrefix">
+            <summary>A unique prefix of RBM message IDs that result from the Dialogflow event. Dialogflow
+            supports multiple responses for a given event. If an event triggers multiple responses, RBM forwards
+            each response as a separate message. Each message ID shares the same prefix.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.AgentId">
+            <summary>Optional. The agent's unique identifier. Defined by RCS Business Messaging.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.DialogflowMessagesResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.Testers">
+            <summary>Gets the Testers resource.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource">
+            <summary>The "testers" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.Create(Google.Apis.RCSBusinessMessaging.v1.Data.Tester,System.String)">
+            <summary>Invites a user to test an agent. The invited user must be RCS-enabled and reachable by the RBM
+            platform. When an agent invites a user to become a tester, an RBM platform management agent sends a
+            message to the user asking for confirmation that she wants to be a tester of the agent. Once the user
+            confirms, she becomes a tester. An agent that has not yet launched can only interact with users who are
+            testers of that agent. If an unlaunched agent attempts to send a message, event, or capability callback
+            to a non-tester, the RBM platform returns a `403 PERMISSION_DENIED` error. An agent can send 20 tester
+            requests each day with a total maximum of 200 tester requests. If you send tester requests above those
+            limits, the RBM platform returns a `429 RESOURCE_EXHAUSTED` response.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="parent">"phones/{E.164}", where {E.164} is the user's phone number in E.164 format. For example, with
+            the US phone number +1-222-333-4444, the resulting endpoint would be
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/testers/.</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest">
+            <summary>Invites a user to test an agent. The invited user must be RCS-enabled and reachable by the RBM
+            platform. When an agent invites a user to become a tester, an RBM platform management agent sends a
+            message to the user asking for confirmation that she wants to be a tester of the agent. Once the user
+            confirms, she becomes a tester. An agent that has not yet launched can only interact with users who are
+            testers of that agent. If an unlaunched agent attempts to send a message, event, or capability callback
+            to a non-tester, the RBM platform returns a `403 PERMISSION_DENIED` error. An agent can send 20 tester
+            requests each day with a total maximum of 200 tester requests. If you send tester requests above those
+            limits, the RBM platform returns a `429 RESOURCE_EXHAUSTED` response.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.RCSBusinessMessaging.v1.Data.Tester,System.String)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.Parent">
+            <summary>"phones/{E.164}", where {E.164} is the user's phone number in E.164 format. For example,
+            with the US phone number +1-222-333-4444, the resulting endpoint would be
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/testers/.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.AgentId">
+            <summary>Optional. The agent's unique identifier. Defined by RCS Business Messaging.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.TestersResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilities(System.String)">
+            <summary>Get the RBM-related capabilities of a user. The returned payload specifies whether a user can be
+            reached with RBM and, if so, which RBM features the user supports. If the user can't be reached with RBM,
+            the RBM platform returns `404 NOT_FOUND`. An agent that isn't launched can only request capabilities for
+            users who are testers of that agent. If an unlaunched agent requests the capabilities of a non-tester, the
+            RBM platform returns `403 PERMISSION_DENIED`.</summary>
+            <param name="name">This field resolves to "phones/{E.164}/capabilities", where {E.164} is the user's phone number in
+            E.164 format. For example, for a user with the US phone number +1-222-333-4444, the resulting endpoint is
+            https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/capabilities.</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest">
+            <summary>Get the RBM-related capabilities of a user. The returned payload specifies whether a user can be
+            reached with RBM and, if so, which RBM features the user supports. If the user can't be reached with RBM,
+            the RBM platform returns `404 NOT_FOUND`. An agent that isn't launched can only request capabilities for
+            users who are testers of that agent. If an unlaunched agent requests the capabilities of a non-tester, the
+            RBM platform returns `403 PERMISSION_DENIED`.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new GetCapabilities request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest.Name">
+            <summary>This field resolves to "phones/{E.164}/capabilities", where {E.164} is the user's phone number
+            in E.164 format. For example, for a user with the US phone number +1-222-333-4444, the resulting
+            endpoint is https://rcsbusinessmessaging.googleapis.com/v1/phones/+12223334444/capabilities.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest.RequestId">
+            <summary>The unique ID of the request, assigned by the agent. This must be a UUID, as defined in
+            https://tools.ietf.org/html/rfc4122. If the request ID matches an ID that the agent used for a previous
+            request, the RBM platform ignores the new request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest.AgentId">
+            <summary>Optional. The agent's unique identifier. Defined by RCS Business Messaging.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.PhonesResource.GetCapabilitiesRequest.InitParameters">
+            <summary>Initializes GetCapabilities parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.UsersResource">
+            <summary>The "users" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.RCSBusinessMessaging.v1.UsersResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.UsersResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGet(Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersRequest)">
+            <summary>Gets the RCS-enabled phone numbers for a list of users. The returned payload contains a list of
+            RCS-enabled phone numbers reachable by the RBM platform for the specified users. Only phone numbers that are
+            RCS-enabled for a carrier the agent is launched on will be returned. The returned payload also contains
+            values that can be used to estimate the potential reach of a list of phone numbers regardless of the launch
+            status of the agent. Maximum 600 queries per minute (QPM).</summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="T:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGetRequest">
+            <summary>Gets the RCS-enabled phone numbers for a list of users. The returned payload contains a list of
+            RCS-enabled phone numbers reachable by the RBM platform for the specified users. Only phone numbers that are
+            RCS-enabled for a carrier the agent is launched on will be returned. The returned payload also contains
+            values that can be used to estimate the potential reach of a list of phone numbers regardless of the launch
+            status of the agent. Maximum 600 queries per minute (QPM).</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGetRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.RCSBusinessMessaging.v1.Data.BatchGetUsersRequest)">
+            <summary>Constructs a new BatchGet request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGetRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGetRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.RCSBusinessMessaging.v1.UsersResource.BatchGetRequest.InitParameters">
+            <summary>Initializes BatchGet parameter list.</summary>
+        </member>
+    </members>
+</doc>
